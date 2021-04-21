@@ -35,6 +35,7 @@ module.exports.addReport = function (req, res) {
     } else {
       const newReport = new Report(reqReport);
       newReport.price = Number(newReport.price) / Number(newReport.convFctr);
+      newReport.priceUnit = "kg";
       newReport.save();
 
       return res.json({ status: "success", reportID: newReport._id });
