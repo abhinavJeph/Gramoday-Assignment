@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 8000;
+const db = require("./config/mongoose");
 
 app.use(express.urlencoded());
 
@@ -11,6 +12,8 @@ app.use(express.json());
 app.get("/", (req, res) => {
   return res.send("<h1>Hello, from server side</h1>");
 });
+
+app.set("query parser", "simple");
 
 // reports API Routes
 app.use("/reports", require("./Routes/api/reports"));
