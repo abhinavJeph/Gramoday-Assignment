@@ -41,3 +41,27 @@ module.exports.addReport = function (req, res) {
     }
   });
 };
+
+module.exports.getReport = function (req, res) {
+  const query = new URLSearchParams(req.query);
+  if (query.has("reportID")) {
+    const ID = query.get("reportID");
+    Report.findOne({ _id: ID }, (err, report) => {
+      if (err) {
+        return res.json({
+          mssg: "Error occured while getting the Report",
+          err,
+        });
+      }
+      if (report) {
+        return res.status(200).json(report);
+      } else {
+        return res.status(404).json({
+          mssg: `Could not found report with reportID ${ID}`,
+        });
+      }
+    });
+  } else {
+    return res.status(400).end("No Report ID Provided");
+  }
+};
