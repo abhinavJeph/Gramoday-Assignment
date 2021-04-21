@@ -65,3 +65,22 @@ module.exports.getReport = function (req, res) {
     return res.status(400).end("No Report ID Provided");
   }
 };
+
+module.exports.deleteReport = function (req, res) {
+  const query = new URLSearchParams(req.query);
+  if (query.has("reportID")) {
+    const ID = query.get("reportID");
+    Report.findByIdAndDelete(ID, (err) => {
+      if (err) {
+        return res.json({
+          mssg: "Error occured while getting the Report",
+          err,
+        });
+      } else {
+        return res.status(200).json({ mssg: "Removed from Database" });
+      }
+    });
+  } else {
+    return res.status(400).end("No Report ID Provided");
+  }
+};
