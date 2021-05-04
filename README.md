@@ -212,4 +212,9 @@ POST /reports
 
 
 # Unit Test
+
+```
+npm run test
+```
+
 Image Link : https://drive.google.com/file/d/1bhbg4LvcB2AjSya-_pVWmhR68ZPlX5P9/view?usp=sharing
