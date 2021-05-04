@@ -1,0 +1,131 @@
+<style type="text/css">
+  .form-style {
+    max-width: 450px;
+    background: #000;
+    padding: 30px;
+    margin: 100px auto;
+    box-shadow: 1px 1px 25px #009879;
+    border-radius: 10px;
+    border: 6px solid #009879;
+  }
+  .form-style ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .form-style ul li {
+    display: block;
+    margin-bottom: 10px;
+    min-height: 35px;
+  }
+  .form-style ul li .field-style {
+    border: none;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
+  }
+
+  .form-style ul li .field-split {
+    width: 49%;
+  }
+  .form-style ul li .field-full {
+    width: 100%;
+  }
+  .form-style ul li input.align-left {
+    float: left;
+  }
+  .form-style ul li input.align-right {
+    float: right;
+  }
+
+  .form-style ul li input[type="button"],
+  .form-style ul li input[type="submit"] {
+    box-shadow: inset 0px 1px 0px 0px #009879;
+    background-color: #009879;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 8px 18px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+  }
+</style>
+
+<form action="/reports" method="POST" class="form-style" id="new-report-form">
+  <ul>
+    <li>
+      <input
+        type="text"
+        name="userID"
+        class="field-style field-split align-left"
+        placeholder="userID"
+        required;
+      />
+      <input
+        type="text"
+        name="marketID"
+        class="field-style field-split align-right"
+        placeholder="marketID"
+        required;
+      />
+    </li>
+    <li>
+      <input
+        type="text"
+        name="marketName"
+        class="field-style field-split align-left"
+        placeholder="Name"
+        required;
+      />
+      <input
+        type="text"
+        name="cmdtyID"
+        class="field-style field-split align-right"
+        placeholder="cmdtyID"
+        required;
+      />
+    </li>
+    <li>
+      <input
+        type="text"
+        name="marketType"
+        class="field-style field-split align-left"
+        placeholder="marketType"
+      />
+      <input
+        type="text"
+        name="cmdtyName"
+        class="field-style field-split align-right"
+        placeholder="cmdtyName"
+      />
+    </li>
+    <li>
+      <input
+        type="text"
+        name="priceUnit"
+        class="field-style field-split align-left"
+        placeholder="priceUnit"
+      />
+      <input
+        type="number"
+        name="convFctr"
+        class="field-style field-split align-right"
+        placeholder="convFctr"
+        required;
+      />
+    </li>
+    <li>
+      <input
+        type="number"
+        name="price"
+        class="field-style field-split align-left"
+        placeholder="price"
+        required;
+      />
+    </li>
+    <li>
+      <input type="submit" value="Post Report" />
+    </li>
+  </ul>
+</form>
+<script src="/assets/js/reports.js"></script>

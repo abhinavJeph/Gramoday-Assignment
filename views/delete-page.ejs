@@ -1,0 +1,58 @@
+<style type="text/css">
+  .form-style {
+    max-width: 450px;
+    background: #000;
+    padding: 30px;
+    margin: 100px auto;
+    box-shadow: 1px 1px 25px #009879;
+    border-radius: 10px;
+    border: 6px solid #009879;
+  }
+  .form-style ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .form-style ul li {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    min-height: 35px;
+  }
+  .form-style ul li .field-style {
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    outline: none;
+    min-width: 400px;
+  }
+
+  .form-style ul li input[type="button"],
+  .form-style ul li input[type="submit"] {
+    box-shadow: inset 0px 1px 0px 0px #009879;
+    background-color: #009879;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    padding: 8px 20px;
+    text-decoration: none;
+    font: 12px Arial, Helvetica, sans-serif;
+  }
+</style>
+
+<form class="form-style">
+  <ul>
+    <li style="align-items: center">
+      <input
+        type="tezt"
+        name="price"
+        class="field-style field-split align-left"
+        placeholder="Report ID"
+        required;
+      />
+    </li>
+    <li>
+      <input type="submit" value="Delete Report" />
+    </li>
+  </ul>
+</form>
